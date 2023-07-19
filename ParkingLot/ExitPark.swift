@@ -15,7 +15,7 @@ class ExitPark: UIViewController {
     var selectedDate: Date?
     var context: NSManagedObjectContext!
     let dateFormatter = DateFormatter()
-  
+    var selam:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
