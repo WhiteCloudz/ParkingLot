@@ -26,7 +26,6 @@ class ExitShowPage: UIViewController {
     var mistageMessage:String?
     var vhcParkingLot:String?
     
-
     
     
     
@@ -39,7 +38,7 @@ class ExitShowPage: UIViewController {
         vehicleSize.text = vhcSize
         checkInTime.text = String(describing: vhcCheckInTime)
         showMessage.text = mistageMessage
-        
+        calculatePrice()
     }
     
     
@@ -47,18 +46,20 @@ class ExitShowPage: UIViewController {
     func calculatePrice() {
         let calendar = Calendar.current
         let currentDate = Date()
+        
+        let dateComponents = calendar.dateComponents([.day], from: vhcCheckInTime, to: currentDate)
 
-        if calendar.isDateInToday(vhcCheckInTime) && vhcCheckInTime > currentDate {
+        guard let days = dateComponents.day else {return}
+
+        if days == 0{
             price.text = "$ 9.99"
         } else {
+            let totalDays = Double(days)
             let pricePerDay = 5.99
-            let days = calendar.dateComponents([.day], from: calendar.startOfDay(for: currentDate), to: calendar.startOfDay(for: vhcCheckInTime)).day ?? 0
-            let totalPrice = 9.99 + (pricePerDay * Double(days))
-            price.text = "$ \(totalPrice)"
+            let totalPrice = 9.99 + (pricePerDay * totalDays)
+            price.text = String(format: "$ %.2f", totalPrice)
         }
     }
-        
-       
     
     @IBAction func goToPay(_ sender: Any) {
         returnHome(storyboardName: "Main", ViewControllarStringName: "PricePay")

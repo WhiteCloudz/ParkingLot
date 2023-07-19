@@ -31,7 +31,6 @@ class CheckInPark: UIViewController {
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         let selectedDate = sender.date
         chcTime = selectedDate
-       
     }
     
     

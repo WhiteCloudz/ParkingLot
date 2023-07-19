@@ -15,5 +15,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func goToHome(_ sender: Any) {
+        returnHome(storyboardName: "Main", ViewControllarStringName: "HomePage")
+    }
 }
 
