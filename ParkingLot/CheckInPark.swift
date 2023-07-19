@@ -16,6 +16,9 @@ class CheckInPark: UIViewController {
     let dateFormatter = DateFormatter()
     var context: NSManagedObjectContext!
     var chcTime = Date()
+    var compactArray:[String] = ["A-1","A-2","A-3","A-4","A-5","A-6","A-7","A-8","A-11","A-12","A-13","A-14","A-15","A-16","A-17","B-1","B-2","B-3","B-4","B-5","B-6","B-7" ]
+    var mycArray:[String] = ["A-9","A-10","B-8","B-9"]
+    var longArray:[String] = ["B-10","B-11","B-12","B-13","B-14","B-15","B-16"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +129,10 @@ class CheckInPark: UIViewController {
                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                present(alertController, animated: true, completion: nil)
            }
+    
+    func checkAvalibleParkingLot(){
+        
+    }
     
     }
                                                 
