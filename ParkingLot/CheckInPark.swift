@@ -8,7 +8,11 @@
 import UIKit
 import CoreData
 
-class CheckInPark: UIViewController {
+
+class CheckInPark: UIViewController{
+    
+    
+ 
     
     @IBOutlet weak var plateNumber: UITextField!
     @IBOutlet weak var vehicleSize: UIButton!
@@ -16,12 +20,17 @@ class CheckInPark: UIViewController {
     let dateFormatter = DateFormatter()
     var context: NSManagedObjectContext!
     var chcTime = Date()
-    var compactArray:[String] = ["A-1","A-2","A-3","A-4","A-5","A-6","A-7","A-8","A-11","A-12","A-13","A-14","A-15","A-16","A-17","B-1","B-2","B-3","B-4","B-5","B-6","B-7" ]
-    var mycArray:[String] = ["A-9","A-10","B-8","B-9"]
-    var longArray:[String] = ["B-10","B-11","B-12","B-13","B-14","B-15","B-16"]
+    var compactArray:[String] = ["A1","A2","A3","A4","A5","A6","A7","A8","A11","A12","A13","A14","A15","A16","A17","B1","B2","B3","B4","B5","B6","B7" ]
+    var mycArray:[String] = ["A9","A10","B8","B9"]
+    var longArray:[String] = ["B10","B11","B12","B13","B14","B15","B16"]
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
         cornerRadius(buttonName: vehicleSize)
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -30,6 +39,15 @@ class CheckInPark: UIViewController {
         context = appDelegate.persistentContainer.viewContext
     }
 
+    
+    @IBAction func cgangeButtonColor(_ sender: Any) {
+        if let sendMap = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController {
+            sendMap.ParkingLot = "A1"
+            sendMap.notAvalible = "B12"
+            sendMap.modalPresentationStyle = .fullScreen
+            self.present(sendMap, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         let selectedDate = sender.date
@@ -40,7 +58,6 @@ class CheckInPark: UIViewController {
     @IBAction func goToHome(_ sender: Any) {
         returnHome(storyboardName: "Main", ViewControllarStringName: "HomePage")
     }
-    
     
     @IBAction func popUp(_ sender: Any) {
         let alertController = UIAlertController(title: "Options", message: "Select Vehicle Size", preferredStyle: .actionSheet)
@@ -129,10 +146,6 @@ class CheckInPark: UIViewController {
                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                present(alertController, animated: true, completion: nil)
            }
-    
-    func checkAvalibleParkingLot(){
-        
-    }
     
     }
                                                 

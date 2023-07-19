@@ -20,7 +20,7 @@
 		1B3C1E462A651EFA00CCCE65 /* ExitPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E452A651EFA00CCCE65 /* ExitPark.swift */; };
 		1B3C1E482A651F4700CCCE65 /* TcketPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E472A651F4700CCCE65 /* TcketPage.swift */; };
 		1B3C1E4A2A651F5D00CCCE65 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E492A651F5D00CCCE65 /* HomePage.swift */; };
-		1B3C1E4C2A651F7B00CCCE65 /* ParkingSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E4B2A651F7B00CCCE65 /* ParkingSite.swift */; };
+		1B3C1E4C2A651F7B00CCCE65 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E4B2A651F7B00CCCE65 /* MapViewController.swift */; };
 		1B3C1E4E2A651F9600CCCE65 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E4D2A651F9600CCCE65 /* Utility.swift */; };
 		1B3C1E542A65203B00CCCE65 /* parkingData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C1E522A65203B00CCCE65 /* parkingData.xcdatamodeld */; };
 		1B403DDF2A670892004194B3 /* ExitShowPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B403DDE2A670892004194B3 /* ExitShowPage.swift */; };
@@ -62,7 +62,7 @@
 		1B3C1E452A651EFA00CCCE65 /* ExitPark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPark.swift; sourceTree = "<group>"; };
 		1B3C1E472A651F4700CCCE65 /* TcketPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TcketPage.swift; sourceTree = "<group>"; };
 		1B3C1E492A651F5D00CCCE65 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
-		1B3C1E4B2A651F7B00CCCE65 /* ParkingSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSite.swift; sourceTree = "<group>"; };
+		1B3C1E4B2A651F7B00CCCE65 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1B3C1E4D2A651F9600CCCE65 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1B3C1E532A65203B00CCCE65 /* parkingData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parkingData.xcdatamodel; sourceTree = "<group>"; };
 		1B403DDE2A670892004194B3 /* ExitShowPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitShowPage.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				1B3C1E452A651EFA00CCCE65 /* ExitPark.swift */,
 				1B403DDE2A670892004194B3 /* ExitShowPage.swift */,
 				1B403DE02A671872004194B3 /* PricePay.swift */,
-				1B3C1E4B2A651F7B00CCCE65 /* ParkingSite.swift */,
+				1B3C1E4B2A651F7B00CCCE65 /* MapViewController.swift */,
 				1B3C1E4D2A651F9600CCCE65 /* Utility.swift */,
 				1B3C1E522A65203B00CCCE65 /* parkingData.xcdatamodeld */,
 				1B3C1E192A651EBF00CCCE65 /* Main.storyboard */,
@@ -293,7 +293,7 @@
 				1B3C1E162A651EBF00CCCE65 /* SceneDelegate.swift in Sources */,
 				1B3C1E462A651EFA00CCCE65 /* ExitPark.swift in Sources */,
 				1B3C1E482A651F4700CCCE65 /* TcketPage.swift in Sources */,
-				1B3C1E4C2A651F7B00CCCE65 /* ParkingSite.swift in Sources */,
+				1B3C1E4C2A651F7B00CCCE65 /* MapViewController.swift in Sources */,
 				1B3C1E4A2A651F5D00CCCE65 /* HomePage.swift in Sources */,
 				1B403DE12A671872004194B3 /* PricePay.swift in Sources */,
 				1B3C1E442A651EEB00CCCE65 /* CheckInPark.swift in Sources */,
