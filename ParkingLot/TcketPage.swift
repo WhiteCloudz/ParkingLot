@@ -19,6 +19,7 @@ class TicketPage: UIViewController {
     @IBOutlet weak var checkInTime: UITextField!
     @IBOutlet weak var plateNumber: UITextField!
     @IBOutlet weak var vehicleSize: UITextField!
+    @IBOutlet weak var parkingLot: UITextField!
     
     var vehiclePlate:String?
     var vhcCheckInTime = Date()
@@ -39,9 +40,9 @@ class TicketPage: UIViewController {
         
     }
     
-    @IBAction func Exit(_ sender: Any) {
-        returnHome(storyboardName: "Main", ViewControllarStringName: "HomePage")
-    }
+
+    
+    
     
     @IBAction func showPopup(_ sender: UIButton) {
         guard let plate = plateNumber.text, !plate.isEmpty else {
@@ -69,37 +70,37 @@ class TicketPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Popup görünümünü oluşturun
-        
         let popupView = UIView(frame: CGRect(x: 0, y: 20, width: 300, height: 300))
         popupView.backgroundColor = .white
-        popupView.backgroundColor = .lightGray
-        
-        // Mesaj etiketi oluşturun
+        popupView.backgroundColor = .darkGray
+       
         let messageLabel = UILabel(frame: CGRect(x: 10, y: 45, width: 270, height: 100))
+        let messageLabel2 = UILabel(frame: CGRect(x: 10, y: 120, width: 270, height: 100))
         
         if resultValue?.count == 0 {
             messageLabel.text = "No value to be saved found."
         }else{
             messageLabel.text = "Your pass card has been successfully added to your widget."
+            messageLabel2.text = "Scan the QR code at the parking entrance, and the barrier will open."
         }
         
         messageLabel.numberOfLines = 2
         messageLabel.textAlignment = .center
         popupView.addSubview(messageLabel)
+        messageLabel.textColor = .white
+        messageLabel2.numberOfLines = 2
+        messageLabel2.textAlignment = .center
+        popupView.addSubview(messageLabel2)
+        messageLabel2.textColor = .white
         
-        // "Ana Sayfaya Dön" butonunu oluşturun
         let backButton = UIButton(type: .system)
-        backButton.frame = CGRect(x: 100, y: 200, width: 100, height: 40)
-        backButton.tintColor = .red
+        backButton.frame = CGRect(x: 100, y: 240, width: 100, height: 40)
+        backButton.tintColor = .white
         backButton.setTitle("Close", for: .normal)
         backButton.addTarget(self, action: #selector(backToHomePage), for: .touchUpInside)
         popupView.addSubview(backButton)
         
-        // Popup görünümünü ana görünüme ekleyin
         view.addSubview(popupView)
-        
-        // Popup görünümünü sayfanın tam ortasında konumlandırın
         popupView.center = view.center
     }
     

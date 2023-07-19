@@ -36,49 +36,26 @@ class PricePay: UIViewController{
         
     }
     
-    @IBAction func showPopup(_ sender: UIButton) {
-        let popupVC = CustomPopupViewController()
-        popupVC.modalPresentationStyle = .overCurrentContext
-        popupVC.modalTransitionStyle = .crossDissolve
-        present(popupVC, animated: true, completion: nil)
-        
-        
+    
+    @IBAction func openQrCode(_ sender: Any) {
+       returnHome(storyboardName: "Main", ViewControllarStringName: "ViewController")
+       
+    }
+    
+
+    
+    @IBAction func writeInformation(_ sender: Any) {
+        phoneNumber.text = "510 224 4567"
+        zipCode.text = "97123"
+        state.text = "CA"
+        City.text = "San Jose"
+        mailingAddress.text = "12896 Raspberry Av "
+        secureCod.text = "945"
+        expirationDate.text = "03 / 2027"
+        cardNumber.text = "4532 6754 1865 2346"
+        cardHolder.text = "Fatih Whitecloud"
         
     }
 }
 
 
-    class CustomPopup: UIViewController{
-        func resultIsEmpty(plate: String) {
-            let plateValue = plate
-            resultValue = plateValue
-        }
-        
-        var resultValue:String?
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            let popupView = UIView(frame: CGRect(x: 0, y: 20, width: 300, height: 300))
-            popupView.backgroundColor = .white
-            popupView.backgroundColor = .lightGray
-            
-            let messageLabel = UILabel(frame: CGRect(x: 10, y: 45, width: 270, height: 100))
-            messageLabel.numberOfLines = 2
-            messageLabel.textAlignment = .center
-            popupView.addSubview(messageLabel)
-            
-            let backButton = UIButton(type: .system)
-            backButton.frame = CGRect(x: 100, y: 200, width: 100, height: 40)
-            backButton.tintColor = .red
-            backButton.setTitle("Close", for: .normal)
-            backButton.addTarget(self, action: #selector(backToHomePage), for: .touchUpInside)
-            popupView.addSubview(backButton)
-            
-            view.addSubview(popupView)
-            
-            popupView.center = view.center
-        }
-        @objc func backToHomePage() {
-            returnHome(storyboardName: "Main", ViewControllarStringName: "HomePage")
-        }
-}
